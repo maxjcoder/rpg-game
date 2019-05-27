@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--Meta Data-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="../rpg-game/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../rpg-game/assets/css/style.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="./assets/images/favicon.jpg">
+
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!--Javascript-->
+    <script type="text/javascript" src="../rpg-game/assets/javascript/game.js"></script>
+
+    <title>Star Wars RPG Game</title>
+
+</head>
+
+<body>
+
+    <!--Title Section-->
+
+    <div class="row" id="titleRow">
+        <div class="col-6">
+        </div>
+
+        <div class="col-6">
+            <h1>Star Wars RPG!</h1>
+        </div>
+    </div>
+
+    <!--Image Section-->
+
+    <div class="row" id="imageRow">
+        <div class="col-2">
+            <p class="obi" value="0">Obi Wan Kenobi</p>
+            <img src="./assets/images/obiImage.jpg" id="obiImage">
+            <p class="hpobi"></p>
+        </div>
+        <div class="col-2">
+            <p class="luke" value="1">Luke Skywalker</p>
+            <img src="./assets/images/lukeImage.jpg" id="lukeImage">
+            <p class="hpluke"></p>
+        </div>
+        <div class="col-2">
+            <p class="darSid" value="2">Darth Sidious</p>
+            <img src="./assets/images/darSidImage.jpg" id="darSidImage">
+            <p class="hpdarSid"></p>
+        </div>
+        <div class="col-2">
+            <p class="darMaul" value="3">Darth Maul</p>
+            <img src="./assets/images/darMaulImage.jpg" id="darMaulImage">
+            <p class="hpdarMaul"></p>
+        </div>
+    </div>
+
+    <!--'Your Character' Section-->
+
+    <div class="row" id="yourCharacterRow">
+        <div class="col-12">
+            <p>Your Character</p>
+        </div>
+    </div>
+
+    <!--'Character Chosen' Section-->
+
+    <div class="row">
+        <div class="col-12" id="characterChosenRow">
+        </div>
+    </div>
+
+    <!--'Enemies Available to Attack' Section-->
+
+    <div class="row" id="enemiesAttackRow">
+        <div class="col-12">
+            <p>Enemies Available to Attack</p>
+        </div>
+    </div>
+
+    <!--'Characters/Enemies Available to Attack' Section-->
+
+    <div class="row">
+        <div class="col-12" id="enemies0"></div>
+        <div class="col-12" id="enemies1"></div>
+        <div class="col-12" id="enemies2"></div>
+        <div class="col-12" id="enemies3"></div>
+    </div>
+
+    <!--'Fight' Section-->
+
+    <div class="row" id="fightRow">
+        <div class="col-12">
+            <p>Fight Section</p>
+        </div>
+    </div>
+
+    <!--'Attack Button' Section-->
+
+    <div class="row">
+        <div class="col-12" id="attackButton">
+            <button>Attack</button>
+        </div>
+    </div>
+
+    <!--'Defender' Section-->
+
+    <div class="row" id="fightRow">
+        <div class="col-12">
+            <p>Defender</p>
+        </div>
+    </div>
+
+    <!--'Character to Attack' Section-->
+
+    <div class="row">
+        <div class="col-12" id="defender"></div>
+    </div>
+
+    <!--'Text for Player Attack' Section-->
+
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <p class="youAttacked"></p>
+            <p class="attackedBack"></p>
+            <p class="youDefeated"></p>
+            <p class="youWon"></p>
+            <p class="youLose"></p>
+            <p class="noEnemy"></p>
+        </div>
+    </div>
+
+    <!--'Restart Button' Section-->
+    <div class="row">
+        <div class="col-12" id="restartButton">
+            <button>Restart</button>
+        </div>
+    </div>
+
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html
