@@ -1,4 +1,8 @@
+//run after DOM loads
 $(document).ready(function () {
+
+    //DECLARE VARIABLES
+    //===================================================================
 
     var characters = {
         "Obi-Wan Kenobi": {
@@ -31,6 +35,9 @@ $(document).ready(function () {
         }
     };
 
+    //FUNCTIONS
+    //================================================================
+
     console.log(characters);
     //fucntion to render the character card to the page
     //character rendered and the area they are rendered to
@@ -58,4 +65,10 @@ $(document).ready(function () {
     //render all characters to the page at the beginning of the game
     renderCharacters(characters, "#characters-section");
 
+    //on-click event for selecting characters
+    $(document).on("click", ".character", function () {
+        //saves the clicked character's name
+        var name = $(this).attr("data-name");
+        console.log(name);
+    });
 });
