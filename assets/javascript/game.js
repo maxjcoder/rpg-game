@@ -54,12 +54,32 @@ $(document).ready(function () {
 
     //handles the rendering of characters based on which area they are to be rendered in
     var renderCharacters = function (charObj, areaRender) {
+
+        //"characters-section" is the div where all of our charactes begin the game
+        //if true, render all characters to the starting area 
         if (areaRender === "#characters-section") {
             $(areaRender).empty();
+            // Loop through the characters object and call the renderOne function on each character to the card.
             for (var key in charObj) {
                 if (charObj.hasOwnProperty(key)) {
                     renderOne(charObj[key], areaRender);
                 }
+            }
+        }
+
+        //"selected-character" is where the selected character appears
+        //if true, render the selected player to this area
+        if (areaRender === "#selected-character") {
+            renderOne(charObj, areaRender);
+        }
+
+        // "#availabel to attack" is the div where our "inactive" opponents reside 
+        //If true, render the selected character to this area
+        if(areaRender === "#available-to-attack-section") {
+            
+            //loop through the combatants array and call the renerOne function 
+            for(var i = 0; i < charObj.length; i++) {
+                renderOne(charObj[i], areaRender);
             }
         }
     }
@@ -81,7 +101,14 @@ $(document).ready(function () {
                     combatants.push(characters[key]);
                 }
             }
+
             console.log(combatants);
+            //hide the character select section
+            $("#characters-section").hide();
+
+            //then render our selected character and the combatants
+            renderCharacters(currSelectedCharacter, "#selected-character");
+            renderCharacters(combatants, "#available-to-attack-section");
         }
     })
 });
