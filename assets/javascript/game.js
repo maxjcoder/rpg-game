@@ -34,6 +34,8 @@ $(document).ready(function () {
             enemyAttackBack: 25
         }
     };
+    var currSelectedCharacter;
+    var combatants = [];
 
     //FUNCTIONS
     //================================================================
@@ -70,5 +72,16 @@ $(document).ready(function () {
         //saves the clicked character's name
         var name = $(this).attr("data-name");
         console.log(name);
-    });
+
+        //if a character has not been chosen
+        if (!currSelectedCharacter) {
+            //loop through the other chars and send them to the combatants array
+            for (var key in characters) {
+                if (key !== name) {
+                    combatants.push(characters[key]);
+                }
+            }
+            console.log(combatants);
+        }
+    })
 });
