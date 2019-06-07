@@ -81,7 +81,7 @@ $(document).ready(function () {
             for(var i = 0; i < charObj.length; i++) {
                 renderOne(charObj[i], areaRender);
             }
-        }
+        } 
     }
 
     //render all characters to the page at the beginning of the game
@@ -95,6 +95,8 @@ $(document).ready(function () {
 
         //if a character has not been chosen
         if (!currSelectedCharacter) {
+            //populate currSelectedCharacter with the selected character's info
+            currSelectedCharacter = characters[name];
             //loop through the other chars and send them to the combatants array
             for (var key in characters) {
                 if (key !== name) {
