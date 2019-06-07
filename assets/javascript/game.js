@@ -43,14 +43,19 @@ $(document).ready(function () {
     console.log(characters);
     //fucntion to render the character card to the page
     //character rendered and the area they are rendered to
-    var renderOne = function (character, renderArea) {
+    var renderOne = function (character, renderArea, charStatus) {
         var charDiv = $("<div class='character' data-name='" + character.name + "'>");
         var charName = $("<div class='character-name'>").text(character.name);
         var charImage = $("<img alt='image' class='character-image'>").attr("src", character.imageUrl);
         var charHealth = $("<div class='character-health'>").text(character.health);
         charDiv.append(charName).append(charImage).append(charHealth);
         $(renderArea).append(charDiv);
-    }
+
+        //if character is an enemy or defender (active opponent) add appropriate class
+        if (charStatus === "enemy") {
+            $(charDiv).addClass("enemy");
+        }
+    };
 
     //handles the rendering of characters based on which area they are to be rendered in
     var renderCharacters = function (charObj, areaRender) {
@@ -75,13 +80,13 @@ $(document).ready(function () {
 
         // "#availabel to attack" is the div where our "inactive" opponents reside 
         //If true, render the selected character to this area
-        if(areaRender === "#available-to-attack-section") {
-            
+        if (areaRender === "#available-to-attack-section") {
+
             //loop through the combatants array and call the renerOne function 
-            for(var i = 0; i < charObj.length; i++) {
+            for (var i = 0; i < charObj.length; i++) {
                 renderOne(charObj[i], areaRender);
             }
-        } 
+        }
     }
 
     //render all characters to the page at the beginning of the game
