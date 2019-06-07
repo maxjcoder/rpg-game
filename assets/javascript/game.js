@@ -86,8 +86,19 @@ $(document).ready(function () {
             for (var i = 0; i < charObj.length; i++) {
                 renderOne(charObj[i], areaRender);
             }
+
+            //on click event for each enemy
+            $(document).on("click", ".enemy", function() {
+                var name = ($(this).attr("data-name"));
+
+                //if there is no defender, the clicked enemy will become the defender
+                if ($("#defender").children().length === 0) {
+                    renderCharacters(name, "#defender");
+                    $(this).hide();
+                }
+            });
         }
-    }
+    };
 
     //render all characters to the page at the beginning of the game
     renderCharacters(characters, "#characters-section");
