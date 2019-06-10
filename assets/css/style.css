@@ -18,7 +18,8 @@ img {
 }
 
 .section-title {
-    font-size: 150%;
+    font-size: 175%;
+    
 }
 
 .character {
@@ -39,3 +40,4 @@ img {
 
 .character-name {text-align: center;}
 .character-health {text-align: center;}
+
