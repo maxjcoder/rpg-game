@@ -34,13 +34,17 @@ $(document).ready(function () {
             enemyAttackBack: 25
         }
     };
+
+    //will be populated when player selects the character
     var currSelectedCharacter;
+    //populated with all the characters the player didn't select
     var combatants = [];
+    //will be populated when the player chooses an opponent
+    var currDefender;
 
     //FUNCTIONS
     //================================================================
 
-    console.log(characters);
     //fucntion to render the character card to the page
     //character rendered and the area they are rendered to
     var renderOne = function (character, renderArea, charStatus) {
@@ -55,6 +59,11 @@ $(document).ready(function () {
         if (charStatus === "enemy") {
             $(charDiv).addClass("enemy");
         }
+        else if (charStatus === "defender"){
+            //populate currentDefender with selected opponent's information
+            currDefender = character;
+            $(charDiv).addClass("target-enemy");
+        }
     };
 
     //handles the rendering of characters based on which area they are to be rendered in
@@ -67,7 +76,7 @@ $(document).ready(function () {
             // Loop through the characters object and call the renderOne function on each character to the card.
             for (var key in charObj) {
                 if (charObj.hasOwnProperty(key)) {
-                    renderOne(charObj[key], areaRender);
+                    renderOne(charObj[key], areaRender, "");
                 }
             }
         }
@@ -75,19 +84,19 @@ $(document).ready(function () {
         //"selected-character" is where the selected character appears
         //if true, render the selected player to this area
         if (areaRender === "#selected-character") {
-            renderOne(charObj, areaRender);
+            renderOne(charObj, areaRender, "");
         }
 
-        // "#availabel to attack" is the div where our "inactive" opponents reside 
+        // "#available-to-attack" is the div where our "inactive" opponents reside 
         //If true, render the selected character to this area
         if (areaRender === "#available-to-attack-section") {
 
             //loop through the combatants array and call the renerOne function 
             for (var i = 0; i < charObj.length; i++) {
-                renderOne(charObj[i], areaRender);
+                renderOne(charObj[i], areaRender, "enemy");
             }
 
-            //on click event for each enemy
+            //create an on click event for each enemy
             $(document).on("click", ".enemy", function() {
                 var name = ($(this).attr("data-name"));
 
@@ -97,6 +106,17 @@ $(document).ready(function () {
                     $(this).hide();
                 }
             });
+        }
+
+        //"defender" is the div where the active opponent will appear
+        //if true, render the selected enemy in this location
+        if (areaRender === "#defender") {
+            $(areaRender).empty();
+            for (var i = 0; i < combatants.length; i++) {
+                if (combatants[i].name === charObj) {
+                    renderOne(combatants[i], areaRender, "defender");
+                }
+            }
         }
     };
 
