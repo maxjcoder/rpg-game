@@ -55,7 +55,7 @@ $(document).ready(function () {
     var renderOne = function (character, renderArea, charStatus) {
         var charDiv = $("<div class='character' data-name='" + character.name + "'>");
         var charName = $("<div class='character-name'>").text(character.name);
-        var charImage = $("<img alt='image' class='character-image'>").attr("src", character.imageUrl);
+        var charImage = $("<image alt='image' class='character-image'>").attr("src", character.imageUrl);
         var charHealth = $("<div class='character-health'>").text(character.health);
         charDiv.append(charName).append(charImage).append(charHealth);
         $(renderArea).append(charDiv);
@@ -254,7 +254,7 @@ $(document).ready(function () {
                 //call the restartGame function to allow the user to restart and play again
                 if (killCount >= 3) {
                     renderMessage("clearMessage");
-                    restartGame("You won. The force is with you! GAME OVER!!")
+                    restartGame("You won. The force is with you! GAME OVER!!");
                 }
             }
         }

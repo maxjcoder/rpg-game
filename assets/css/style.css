@@ -1,12 +1,16 @@
-body {
+body,
+html {
+    height: 100%;
+    width: 100%;
     font-family: 'Share Tech Mono', monospace, Arial, Helvetica, sans-serif;
+    font-weight: bold;
     background-image: url(../images/background.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
 
-img {
+image {
     height: 100px;
     width: 150px;
     border-radius: 10px;
@@ -25,7 +29,7 @@ img {
 .character {
     display: inline-block;
     border-style: solid;
-    border-color: green;
+    border-color: darkblue;
     border-width: 3px;
     cursor: pointer;
     background-color: white;
@@ -38,6 +42,60 @@ img {
     margin-bottom: 3px;
 }
 
+.character.enemy {
+    display: inline-block;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    cursor: pointer;
+    background-color: red;
+}
+
+.character.target-enemy {
+    display: inline-block;
+    color: white;
+    border-style: solid;
+    border-color: red;
+    border-width: 3px;
+    cursor: pointer;
+    background-color: black;
+}
+
+.alert.alert-danger {
+    width: 52%;
+    border: 1px solid;
+}
+
+.alert.alert-dark {
+    border: 1px solid;
+}
+
+button {
+    width: 72px;
+    height: 28px;
+}
+
+#battle-message {
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: center;
+}
+
 .character-name {text-align: center;}
 .character-health {text-align: center;}
 
+/* media queries */
+
+@media only screen and (max-width: 992px) {
+    html,
+    body {
+        height: 150%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html,
+    body {
+        height: 200%;
+    }
+}
